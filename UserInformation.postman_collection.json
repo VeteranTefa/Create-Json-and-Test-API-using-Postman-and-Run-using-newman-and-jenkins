@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "b25791fe-153b-4f9b-a672-3eceb36a6da8",
+		"name": "User Information",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21715313"
+	},
+	"item": [
+		{
+			"name": "Display All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://63150227fa82b738f7522687.mockapi.io/users/",
+					"protocol": "https",
+					"host": [
+						"63150227fa82b738f7522687",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches FirstName\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Mostafa\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"firstName\": \"Mostafa\",\r\n        \"lastName\": \"Mohamed\",\r\n        \"address\": \"01235 Cairo,Egypt\",\r\n        \"country\": \"Egypt\",\r\n        \"title\": \"QA Engineer\",\r\n        \"company\": \"Freelancing\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://63150227fa82b738f7522687.mockapi.io/users/",
+					"protocol": "https",
+					"host": [
+						"63150227fa82b738f7522687",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Mostafa\",\r\n    \"lastName\": \"Mohamed\",\r\n    \"address\": \"01235 Cairo,Egypt\",\r\n    \"country\": \"Egypt\",\r\n    \"title\": \"Quality Control Engineer\",\r\n    \"company\": \"Freelancing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://63150227fa82b738f7522687.mockapi.io/users/16",
+					"protocol": "https",
+					"host": [
+						"63150227fa82b738f7522687",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"users",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"address\": \"11111 Alex,Egypt\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://63150227fa82b738f7522687.mockapi.io/users/16",
+					"protocol": "https",
+					"host": [
+						"63150227fa82b738f7522687",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"users",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://63150227fa82b738f7522687.mockapi.io/users/16",
+					"protocol": "https",
+					"host": [
+						"63150227fa82b738f7522687",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"users",
+						"16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
